@@ -1,0 +1,35 @@
+from random import *
+
+
+def diff():
+    f = abs(y - x)
+    print("The guess was missed by " + str(f))
+
+
+'''
+def input_number():
+    print("\nThe actual input value is " + str(x))
+
+
+def r():
+    print("The actual random value is " + str(y))
+'''
+
+d = range(3)
+for n in d:
+
+    x = int(input("\n\nPlease enter your number: "))  # enter the number in the range of 1 to 100
+    # input()
+
+    y = randint(1, 100)
+    print("\nRandom number: ", y)
+
+    # input_number()
+    # r()
+
+    if x == y:
+        print("\n Woww !!!  The input value matches with random value !")
+    else:
+        print("\n Unfortunately, the input value doesnt match with random value !!!!")
+        diff()
+
