@@ -1,0 +1,11 @@
+
+x1 = input("Input 1: ")
+x2 = input("Input 2: ")
+x3 = input("Input 3: ")
+x4 = input("Input 4: ")
+x5 = input("Input 5: ")
+
+s = x4 + " " + x1 + " " + x3 + " " + x5 + " " + x2  # premade template
+
+print(" The full story: "+s)
+
