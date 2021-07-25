@@ -1,0 +1,33 @@
+from random import *
+
+print("########################################## \n\t Guess the word and its Position \n##########################################")
+
+x = ["Apple", "Banana", "Orange", "Watermelon", "Pomegranate", "Muskmelon", "Grapes", "Papaya"]
+
+
+def prompt():
+    global y
+    
+    if y in x:
+        print("Yayy!! You prompted the correct word ")
+    else:
+        print("\nUnfortunately, you prompted the wrong word ###")
+
+
+def position():
+    global z, y
+    pos = x.index(y)
+
+    if z == pos:
+        print("The position of the word is correct !!!")
+    else:
+        print("You missed the position ###")
+
+
+while True:
+    for n in range(3):
+        
+        y = input("\nGuess the fruit: ")
+        z = int(input("Guess the position of the word: "))
+        prompt()
+        position()
