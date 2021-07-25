@@ -1,0 +1,16 @@
+
+def alpha_numbers():
+    t = input("Please enter something: ")
+    for char in t:
+        if ('a' <= char <= 'z') or ('A' <= char <= 'Z'):
+            print("Its an Alphabet !!!")
+        elif char.isdigit():
+            contains_digit = True
+            print("Its a Number !!!")
+        else:
+            print("Its a Special Character or Symbol !!!")
+
+
+while True:
+    for n in range(3):
+        alpha_numbers()
