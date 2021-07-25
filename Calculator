@@ -1,0 +1,107 @@
+-----------------------------
+##### 1.  Basic Program
+-----------------------------
+
+
+def add(x, y):
+    z = x + y
+    print("Addition: ", z)
+
+
+def sub(x, y):
+    z = abs(x - y)
+    print("Subtraction: ", z)
+
+
+def mul(x, y):
+    z = x * y
+    print("Multiplication: ", z)
+
+
+def div(x, y):
+    z = x / y
+    print("Division: ", z)
+
+
+while True:
+    print("\n################## \n\tCalculator \n##################")
+
+    print("\nEnter 2 numbers of your choice ")
+
+    r = int(input("Number 1: "))
+    s = int(input("Number 2: "))
+
+    e = input("Enter the operation: ")
+
+    if (e == 'A') | (e == 'Add') | (e == 'Addition'):
+        add(r, s)
+    elif (e == 'S') | (e == 'Sub') | (e == 'Subtraction'):
+        sub(r, s)
+    elif (e == 'M') | (e == 'Mul') | (e == 'Multiplication'):
+        mul(r, s)
+    elif (e == 'D') | (e == 'Div') | (e == 'Division'):
+        div(r, s)
+    else:
+        print("No operation suggested, Please write one down: ")
+
+
+
+############################################################################################################################################################
+
+
+-------------------------------------------------------
+##### 2.  Another method: Using expression as input
+-------------------------------------------------------
+
+print("################## \n\tCalculator \n##################")
+
+
+def two():
+    global a
+
+    if a[2] == '+':
+        t = float(a[0] + a[1]) + float(a[3] + a[4])
+        print("Result: ", t)
+    elif a[2] == '-':
+        t = abs(float(a[0] + a[1]) - float(a[3] + a[4]))
+        print("Result: ", t)
+    elif a[2] == '*':
+        t = float(a[0] + a[1]) * float(a[3] + a[4])
+        print("Result: ", t)
+    elif a[2] == '/':
+        t = float(a[0] + a[1]) / float(a[3] + a[4])
+        print("Result: ", t)
+    else:
+        print("Not a familiar situation !!!")
+
+
+def one():
+    global a
+
+    if a[1] == '+':
+        t = float(a[0]) + float(a[2])
+        print("Result: ", t)
+    elif a[1] == '-':
+        t = abs(float(a[0]) - float(a[2]))
+        print("Result: ", t)
+    elif a[1] == '*':
+        t = float(a[0]) * float(a[2])
+        print("Result: ", t)
+    elif a[1] == '/':
+        t = float(a[0]) / float(a[2])
+        print("Result: ", t)
+    else:
+        print("Not a familiar situation !!!")
+
+
+while True:
+    print("\nCalculate the outcome of an mathematical expression")
+    a = input("Enter the expression: ")
+    x = ["+", "-", "*", "/"]
+
+    if (a[1] == "+") or (a[1] == "-") or (a[1] == "*") or (a[1] == "/"):
+        one()
+    elif (a[2] == "+") or (a[2] == "-") or (a[2] == "*") or (a[2] == "/"):
+        two()
+    else:
+        print("Do you want to continue? ")
