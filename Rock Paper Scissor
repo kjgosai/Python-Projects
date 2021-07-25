@@ -1,0 +1,60 @@
+import random
+
+
+def validity():
+    print("\nUser's Answer: ")
+    if (t == "R") | (t == "Rock"):
+        print("Rock")
+    elif (t == "P") | (t == "Paper"):
+        print("Paper")
+    elif (t == "S") | (t == "Scissor"):
+        print("Scissor")
+    else:
+        print("No input recorded !!!")
+
+
+def winner():
+    if ((t == "R") | (t == "Rock")) & ((y == "R") | (y == "Rock")):
+        print("Tie")
+    elif ((t == "P") | (t == "Paper")) & ((y == "P") | (y == "Paper")):
+        print("Tie")
+    elif ((t == "S") | (t == "Scissor")) & ((y == "S") | (y == "Scissor")):
+        print("Tie")
+    elif ((t == "R") | (t == "Rock")) & ((y == "P") | (y == "Paper")):
+        print("!!!  Computer Wins  !!!")
+    elif ((t == "R") | (t == "Rock")) & ((y == "S") | (y == "Scissor")):
+        print("!!!  User Wins  !!!")
+    elif ((t == "P") | (t == "Paper")) & ((y == "S") | (y == "Scissor")):
+        print("!!!  Computer Wins  !!!")
+    elif ((t == "P") | (t == "Paper")) & ((y == "R") | (y == "Rock")):
+        print("!!!  User Wins  !!!")
+    elif ((t == "S") | (t == "Scissor")) & ((y == "R") | (y == "Rock")):
+        print("!!!  Computer Wins  !!!")
+    elif ((t == "S") | (t == "Scissor")) & ((y == "R") | (y == "Paper")):
+        print("!!!  User Wins  !!!")
+    else:
+        print("Error: Restart the game !!!")
+
+
+print("########################################################")
+print("\tRock Paper Scissor")
+print("########################################################")
+f = input("\tPlay the game:  ")
+
+while True:
+    if (f == "Y") | (f == "Yes") | (f == "y"):
+        for n in range(3):
+            t = input("\nEnter your choice: ")
+            validity()
+
+            print("Computer's Answer: ")
+            y = random.choice(('Rock', 'Paper', 'Scissor'))
+            print(y)
+
+            print("Winner: ")
+            winner()
+
+        print("\n Hope you liked the game !!!")
+        f = input("\tDo you want to continue:  ")
+    else:
+        break
