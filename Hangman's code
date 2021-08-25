@@ -1,0 +1,55 @@
+from random import *
+# Here Player 1 is computer
+
+
+def game(x):
+
+    global y
+
+    incorrect_attempts = 0
+    phases = ["", "_____________", "|     | ", "|     O", "|   / | \ ", "|    / \ ", "|_____________"]
+    l = list(x)
+    dash = ["__"] * len(x)
+    turns = 5
+
+    #while incorrect_attempts < len(phases) - 1:
+    while turns > 0:
+    
+            p = input("\nUser, please guess a letter: ")
+            if p in l:
+                z = l.index(p)
+                dash[z] = p
+                print(dash)
+                if dash == l:
+                    print("\n\n------->>>  Congratulations, you won !!!  <<<-------")
+                    break
+            else:
+                incorrect_attempts += 1
+                turns -= 1
+                print("Turns : ", turns)
+                print(dash)
+                if turns == 4:
+                    print(phases[0] + "\n" + phases[1] + "\n" + phases[2])
+                elif turns == 3:
+                    print(phases[0] + "\n" + phases[1] + "\n" + phases[2] + "\n" + phases[3])
+                elif turns == 2:
+                    print(phases[0] + "\n" + phases[1] + "\n" + phases[2] + "\n" + phases[3] + "\n" + phases[4])
+                elif turns == 1:
+                    print(phases[0] + "\n" + phases[1] + "\n" + phases[2] + "\n" + phases[3] + "\n" + phases[4] + "\n" +
+                          phases[5])
+                else:
+                    print(phases[0] + "\n" + phases[1] + "\n" + phases[2] + "\n" + phases[3] + "\n" + phases[4] + "\n" +
+                          phases[5] + "\n" + phases[6])
+                    print("\n######  Game over  ######")
+
+
+
+print("\n #################################################")
+print("\n ######          The Hangman's Den          ######")
+print("\n #################################################")
+d = input("Do you want to play the game ?")
+
+while True:
+    if (d == 'y') or (d == 'Y'):
+        game("spider")
+        d = input("\n\nDo you want to play again ?")
