@@ -1,0 +1,54 @@
+
+
+def caesar_ENC():
+    print("\n###############   ENCRYPTION PROCESS   #####################")
+    x = input("\nEnter Plain-text: ")
+    n = int(input("Enter key/shift: "))
+    z = ""
+    for i in x:
+        if i.isupper():
+            c = chr((((ord(i) - 65) + n) % 26) + 65)
+            z = z + c
+        elif i.islower():
+            c = chr((((ord(i) - 97) + n) % 26) + 97)
+            z = z + c
+        elif i == " ":
+            z = z + i
+
+    print("\n\tPlain-Text: ", x)
+    print("\tKey: ", n)
+    print("\tCipher-Text (Encrypted message) :  ", z)
+    print("##############################################################")
+
+
+def caesar_DEC():
+    print("\n###############   DECRYPTION PROCESS   #####################")
+    x = input("\nEnter Cipher-Text: ")
+    n = int(input("Enter key/shift: "))
+    z = ""
+    for i in x:
+        if i.isupper():
+            c = chr((((ord(i) - 65) - n) % 26) + 65)
+            z = z + c
+        elif i.islower():
+            c = chr((((ord(i) - 97) - n) % 26) + 97)
+            z = z + c
+        elif i == " ":
+            z = z + i
+
+    print("\n\tPlain-Text: ", x)
+    print("\tKey: ", n)
+    print("\tCipher-Text (Encrypted message) :  ", z)
+    print("##############################################################")
+
+
+while True:
+    t = input("\n There are 2 choices: \n 1. Encrypt \n 2. Decrypt \n\nEnter your input: ")
+    if t == "1":
+        caesar_ENC()
+    elif t == "2":
+        caesar_DEC()
+    else:
+        print("Do you want to use Caesar Cipher again ?")
+
+
